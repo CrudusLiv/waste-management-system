@@ -1,11 +1,12 @@
-import { APP_BASE_HREF } from '@angular/common';
-import { CommonEngine } from '@angular/ssr';
 import express from 'express';
-import { fileURLToPath } from 'url';
+import mongoose from 'mongoose';
 import { dirname, join, resolve } from 'path';
+import { fileURLToPath } from 'url';
+import { CommonEngine } from '@angular/ssr';
+import { APP_BASE_HREF } from '@angular/common';
 import bootstrap from './src/main.server';
+import wasteRoutes from './src/routes/waste.routes';
 
-// The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
@@ -14,8 +15,14 @@ export function app(): express.Express {
 
   const commonEngine = new CommonEngine();
 
+  // Connect to MongoDB
+  mongoose.connect('mongodb+srv://CrudusLiv:pNqd4eHjHkWkMNND@cluster0.n2yin.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/')
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(err => console.error('Error connecting to MongoDB:', err));
+
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
+  server.use('/api/waste', wasteRoutes);
 
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {
@@ -50,5 +57,4 @@ function run(): void {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
-
 run();
