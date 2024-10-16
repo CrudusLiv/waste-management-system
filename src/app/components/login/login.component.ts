@@ -33,4 +33,13 @@ export class LoginComponent {
       this.errorMessage = 'Please fill in all required fields correctly.'; // Validation feedback
     }
   }
+  // Boolean to toggle between login and signup forms
+  isLoginMode: boolean = true;
+
+  // Method to toggle form mode
+  toggleMode() {
+    this.isLoginMode = !this.isLoginMode;
+  }
+
+  
 }

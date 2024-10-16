@@ -1,26 +1,33 @@
-
 <div class="profile-container">
   <div class="profile-header">
     <div class="profile-avatar">
-      <img src="assets/default-avatar.png" alt="User Avatar">
+      <img src="/assets/images/user_profile.png" alt="User Avatar">
     </div>
-    <h1>{{user?.fullName}}</h1>
-    <p class="community-name">{{user?.communityName}}</p>
+    <div class="notifications-icon">
+      <i class="fas fa-bell" (click)="toggleNotifications()"></i>
+      <span class="notification-count" *ngIf="notifications.length">{{ notifications.length }}</span>
+    </div>
+    
+    
   </div>
+
   <div class="profile-details">
+    <h1 class="user-name">{{user?.fullName || 'John'}}</h1>
+    <p class="community-name">{{user?.communityName || 'Subang Jaya'}}</p>
+    
     <div class="detail-item">
       <i class="fas fa-envelope"></i>
-      <span>{{user?.email}}</span>
+      <span>{{user?.email || 'john123@gmail.com'}}</span>
     </div>
     <div class="detail-item">
       <i class="fas fa-phone"></i>
-      <span>{{user?.contactNumber}}</span>
+      <span>{{user?.contactNumber||'012-34567890'}}</span>
     </div>
     <div class="detail-item">
       <i class="fas fa-home"></i>
-      <span>{{user?.residentialAddress}}</span>
+      <span>{{user?.residentialAddress||'Bandar Sunway,	Subang Jaya, Selangor,	47500'}}</span>
     </div>
-  </div>
+
   <div class="profile-actions">
     <button class="edit-profile-btn">Edit Profile</button>
   </div>

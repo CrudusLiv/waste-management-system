@@ -1,1 +1,23 @@
-<p>pickup-history works!</p>
+<div class="pickup-history-container">
+  <h2>Pickup History</h2>
+  <div class="filter-section">
+    <label for="wasteType">Waste Type</label>
+    <select id="wasteType" (change)="filterHistory()">
+      <option value="">All</option>
+      <option value="household">Household Waste</option>
+      <option value="recyclable">Recyclable Waste</option>
+      <option value="hazardous">Hazardous Waste</option>
+    </select>
+    <label for="startDate">Start Date</label>
+    <input id="startDate" type="date" (change)="filterHistory()">
+    <label for="endDate">End Date</label>
+    <input id="endDate" type="date" (change)="filterHistory()">
+  </div>
+  <div class="history-list">
+    <div class="history-card" *ngFor="let pickup of filteredHistory">
+      
+      <p>Type: {{ pickup.wasteType }}</p>
+      <p>Person in Charge: {{ pickup.personInCharge }}</p>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,22 @@
   margin-left: 200px;
   padding: 20px;
 }
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.notification-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0 6px;
+  font-size: 12px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
 .popup-overlay {
   position: fixed;
   top: 0;

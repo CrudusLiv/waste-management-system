@@ -1,6 +1,12 @@
 <div class="hamburger" (click)="toggleMenu()" [class.hidden]="isMenuOpen">
   <i class="fas fa-bars"></i>
 </div>
+
+<!-- Add Notification Bell -->
+<div class="notification-bell" (click)="openNotifications()">
+  <i class="fas fa-bell"></i>
+</div>
+
 <nav [class.open]="isMenuOpen">
   <div class="nav-header">
     <h2>WMS</h2>
@@ -12,9 +18,8 @@
     <li><a routerLink="/recycling" ><i class="fas fa-recycle"></i> Recycling</a></li>
     <li><a routerLink="/disposal" ><i class="fas fa-trash-alt"></i> Disposal</a></li>
     <li><a routerLink="/reports" ><i class="fas fa-chart-bar"></i> Reports</a></li>
-    <li><a routerLink="/settings" ><i class="fas fa-cog"></i> Settings</a></li>
+    <li><a routerLink="/admin-dashboard"><i class="fas fa-cog"></i> Admin Dashboard</a></li>
     <li><a routerLink="/profile" ><i class="fas fa-user"></i> Profile</a></li>
     <li><a routerLink="/login" ><i class="fas fa-sign-in-alt"></i> Login</a></li>
-    <li><a routerLink="/signup" ><i class="fas fa-user-plus"></i> Sign Up</a></li>
   </ul>
 </nav>

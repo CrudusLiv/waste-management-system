@@ -12,6 +12,15 @@
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
+    background-image: url('./assets/images/background.jpg');
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-position: center center; /* Centers the background image */
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
   }
   
   /* Navigation bar styling */

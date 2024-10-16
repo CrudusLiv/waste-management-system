@@ -1,41 +1,111 @@
 .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .page-header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .page-header h2 {
-    font-size: 2rem;
-  }
-  
-  .schedule-section {
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
-  
-  .schedule-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .schedule-form label {
-    font-weight: bold;
-  }
-  
-  .schedule-form input,
-  .schedule-form select {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.page-header h2 {
+  font-family: 'Gloria Hallelujah', sans-serif;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.page-header .subtitle {
+  color: #e0f2e1;
+}
+
+.schedule-section {
+  background-color: rgba(255, 255, 255, 0.814);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.schedule-form {
+  display: grid;
+  gap: 20px;
+}
+
+
+h3 {
+  font-size: 1.8rem;
+  color: #333333;
+  margin: 0 0 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #4CAF50;
+  display: inline-block;
+  position: relative;
+}
+
+
+
+.schedule-form label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.schedule-form select,
+.schedule-form input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.schedule-form select:hover,
+.schedule-form input[type="date"]:hover {
+  border-color: #4CAF50;
+}
+
+.schedule-form select:focus,
+.schedule-form input[type="date"]:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+  outline: none;
+  background-color: #ffffff;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 0;
+  display: block;
+}
+
+button:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}

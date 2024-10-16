@@ -6,7 +6,7 @@ import { DisposalComponent } from './components/disposal/disposal.component';
 import { ReportsComponent } from './components/reports/reports.component';
 import { LoginComponent } from './components/login/login.component'; // Add this import
 import { ProfileComponent } from './components/profile/profile.component'; // Add this import
-import { SignupComponent } from './components/signup/signup.component'; // Add this import
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component'; // Add this import
 
 
 export const routes: Routes = [
@@ -18,7 +18,5 @@ export const routes: Routes = [
   { path: 'reports', component: ReportsComponent },
   { path: 'login', component: LoginComponent }, // Add this route
   { path: 'profile', component: ProfileComponent }, // Add this route
-  { path: 'signup', component: SignupComponent }, // Add this route
-  { path: '', redirectTo: '/dashboard', pathMatch: 'full' }, // Optional: redirect to dashboard if no path is specified
-  { path: '**', redirectTo: '/dashboard' } // Optional: catch-all route for 404 errors
+  { path: 'admin', component: AdminDashboardComponent }, // Add this route
 ];

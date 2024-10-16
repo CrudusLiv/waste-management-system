@@ -3,14 +3,25 @@
     margin: 0 auto;
     padding: 20px;
   }
-  
+
   .page-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
   
   .page-header h2 {
-    font-size: 2rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .page-header .subtitle {
+    color: #2a2a2a;
   }
   
   .report-selection {
@@ -27,26 +38,66 @@
   }
   
   .report-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
   }
   
   .report-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    flex: 1;
-    min-width: 280px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.814);
+    border: none;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
   .report-card h3 {
+    color: #04554d;
+    font-size: 1.5rem;
     margin-top: 0;
+    margin-bottom: 15px;
   }
   
   .report-card p {
     font-size: 1rem;
+    color: #555555;
   }
+
+  /* Style the graph bars */
+  .chart-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 250px;
+    background-color: #ffffffa5;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .chart-bar {
+    width: 18%;
+    text-align: center;
+    color: white;
+    border-radius: 5px 5px 0 0;
+    padding-top: 10px;
+    font-size: 14px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .chart-bar:hover {
+    transform: scaleY(1.05);
+  }
+  
+  .chart-bar::after {
+    content: attr(data-percentage);
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #333;
+    font-weight: bold;
+  }
+  
   

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDialogComponent } from '../notification-dialog/notification-dialog.component';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +13,23 @@ import { RouterModule } from '@angular/router';
 export class NavigationComponent {
   isMenuOpen = false;
 
+  constructor(private dialog: MatDialog) {}
+
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  openNotifications(): void {
+    const dialogRef = this.dialog.open(NotificationDialogComponent, {
+      width: '600px',
+      data: {
+        notifications: [
+          { message: 'You have a new message.' },
+          { message: 'Your profile has been updated.' }
+        ],
+        markAsRead: () => {},
+        deleteNotification: () => {}
+      }
+    });
   }
 }

@@ -1,16 +1,60 @@
-<div class="login-container">
-    <div class="login-card">
-      <h2>Login</h2>
-      <form>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+<main>
+    <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="signin-container">
+        <!-- SignIn Card -->
+        <div class="signin-card">
+            <h2 id="signin-h2">Sign In</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name"><i class="fa fa-user" aria-hidden="true"></i></label>
+                    <input type="email" class="user_input" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+                    <input type="password" class="user_input" id="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="form-group form-button">
+                    <button type="submit" class="user_btn">Log in</button>
+                </div>
+            </form>
         </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required>
+  
+        <!-- Signup Card -->
+        <div class="signup-card">
+          <h2 id="signup-h2">Sign Up</h2>
+            <form>
+                <div class="form-group">
+                  <label for="name"><i class="fa fa-user" aria-hidden="true"></i></label>
+                  <input type="text" name="name" id="name" placeholder="Your Name" required/>
+              </div>
+              <div class="form-group">
+                  <label for="email"><i class="fa fa-envelope" aria-hidden="true"></i></label>
+                  <input type="email" name="email" id="email" placeholder="Your Email" required/>
+              </div>
+              <div class="form-group">
+                  <label for="pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+                  <input type="password" name="pass" id="pass" placeholder="Password" required/>
+              </div>
+              <div class="form-group">
+                  <label for="re-pass"><i class="fa fa-lock" aria-hidden="true"></i></label>
+                  <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" required/>
+              </div>
+              <div class="form-group">
+                  <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" required/>
+                  <!-- term of serice not yet implemented -->
+                  <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+              </div>
+              <div class="form-group form-button">
+                  <button type="submit" name="signup" id="signup" class="user_btn" value="Register">Register</button>
+              </div>
+            </form>
         </div>
-        <button type="submit">Login</button>
-      </form>
     </div>
-  </div>
+
+        <div class="toggle-container">
+          <label for="chk" class="toggle-option">Sign In</label>
+          <label for="chk" class="toggle-option">Sign Up</label>
+        </div>
+      
+  </main>
+  

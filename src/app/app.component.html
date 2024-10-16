@@ -5,7 +5,13 @@
   <a mat-button routerLink="/recycling">Recycling</a>
   <a mat-button routerLink="/disposal">Disposal</a>
   <a mat-button routerLink="/reports">Reports</a>
+  <span class="spacer"></span>
+  <button mat-icon-button aria-label="Notifications">
+    <mat-icon>notifications</mat-icon>
+    <span class="notification-count" *ngIf="notifications.length">{{ notifications.length }}</span>
+  </button>
 </mat-toolbar>
+
 
 <router-outlet></router-outlet>
 
@@ -23,6 +29,8 @@
     </ul>
   </div>
 </nav>
+
+<app-navigation></app-navigation>
 
 <!-- Main content area where routed components will be injected -->
 <div class="container main-content">

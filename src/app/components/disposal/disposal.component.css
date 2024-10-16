@@ -6,34 +6,73 @@
   
   .page-header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   }
   
   .page-header h2 {
-    font-size: 2rem;
+    font-family: 'Gloria Hallelujah', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .page-header .subtitle {
+    color: #2a2a2a;
   }
   
   .disposal-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
   }
-  
+
   .disposal-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    flex: 1;
-    min-width: 280px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   background-color: rgba(255, 255, 255, 0.814);
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
+  .disposal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
   .disposal-card h3 {
+    color: #3e9441;
+    font-size: 1.5rem;
     margin-top: 0;
+    margin-bottom: 15px;
   }
   
   .disposal-card p {
     font-size: 1rem;
+    color: #333;
   }
-  
+  .disposal-card i {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #2196F3;
+  }
+
+  .disposal-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #2196F3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .disposal-card a:hover {
+    color: #333;
+  }
+
+  .disposal-card a:hover i {
+    transform: translateX(5px);
+  }
