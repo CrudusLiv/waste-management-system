@@ -14,11 +14,7 @@ export class NotificationService {
     return this.http.post(this.apiUrl, notification);
   }
 
-  getNotifications(userId: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/${userId}`);
-  }
-
-  broadcastAnnouncement(announcement: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/broadcast`, announcement);
+  getNotifications(p0?: string): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 }

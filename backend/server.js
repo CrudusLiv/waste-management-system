@@ -10,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB database connection
-mongoose.connect('mongodb://localhost:mongodb+srv://CrudusLiv:pNqd4eHjHkWkMNND@cluster0.n2yin.mongodb.net//your_database_name')
+mongoose.connect('mongodb+srv://CrudusLiv:pNqd4eHjHkWkMNND@cluster0.n2yin.mongodb.net/your_database_name?retryWrites=true&w=majority')
   .then(() => {
     console.log('Connected to the MongoDB database.');
   })
@@ -20,10 +20,8 @@ mongoose.connect('mongodb://localhost:mongodb+srv://CrudusLiv:pNqd4eHjHkWkMNND@c
 
 // Define a Notification model
 const Notification = mongoose.model('Notification', new mongoose.Schema({
-  // Define your schema here
   title: String,
   message: String,
-  // Add other fields as necessary
 }));
 
 // Define API routes

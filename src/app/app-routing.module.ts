@@ -10,6 +10,7 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { PickupHistoryComponent } from './components/pickup-history/pickup-history.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -23,6 +24,7 @@ export const routes: Routes = [
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   { path: 'pickup-history', component: PickupHistoryComponent },
   { path: 'notifications', component: NotificationsComponent },
+  { path: 'contact', component: ContactComponent },
 ];
 
 @NgModule({

@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationDialogComponent } from '../notification-dialog/notification-dialog.component';
+import { MaterialModule } from '../../material.module';
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [RouterModule],
+  imports: [
+    RouterModule
+  ],
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })

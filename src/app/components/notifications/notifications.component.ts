@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { NotificationDialogComponent } from '../notification-dialog/notification-dialog.component';
+import { MaterialModule } from '../../material.module';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.css']
+  styleUrls: ['./notifications.component.css'],
+  standalone: true,
+  imports: [
+    NotificationDialogComponent,
+    MaterialModule,
+    RouterLink,
+  ]
 })
 export class NotificationsComponent {
   notifications = [

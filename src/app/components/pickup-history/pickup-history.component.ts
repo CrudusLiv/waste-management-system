@@ -1,10 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
+import { MaterialModule } from '../../material.module';
 
 @Component({
   selector: 'app-pickup-history',
   templateUrl: './pickup-history.component.html',
-  styleUrls: ['./pickup-history.component.css']
+  styleUrls: ['./pickup-history.component.css'],
+  standalone: true,
+  imports: [
+    MaterialModule,
+    RouterLink,
+  ]
 })
 export class PickupHistoryComponent implements OnInit {
   history: any[] = [];

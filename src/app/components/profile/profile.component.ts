@@ -2,11 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { NotificationService } from '../../services/notification.service';
 import { Router } from '@angular/router';
+import { MaterialModule } from '../../material.module';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  standalone: true,
+  imports: [
+    MaterialModule,
+    RouterLink,
+  ]
 })
 export class ProfileComponent implements OnInit {
   user: any;

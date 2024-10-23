@@ -20,6 +20,7 @@ import { PickupHistoryComponent } from './components/pickup-history/pickup-histo
     RouterOutlet,
     NavigationComponent,
     NgIf,
+    CommonModule,
     AdminDashboardComponent,
     DashboardComponent,
     WasteCollectionComponent,

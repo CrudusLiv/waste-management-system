@@ -32,24 +32,24 @@
 }
 
 .btn-primary {
-  background-color: #007bff;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background-color: #007bff;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
 }
 
 .btn-secondary:hover {
-  background-color: #023c7a;
+  background-color: #45a049;
   transform: translateY(-2px);
 }
 
@@ -75,7 +75,7 @@
 
 .card-icon {
   font-size: 3rem;
-  color: #007bff;
+  color: #4CAF50;
   margin-bottom: 20px;
 }
 

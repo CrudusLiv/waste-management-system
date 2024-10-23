@@ -1,33 +1,37 @@
-<div class="dashboard-icon-container">
-  <a routerLink="/dashboard" class="dashboard-icon-link">
-    <i class="fas fa-tachometer-alt"></i>
-    <span>Dashboard</span>
-  </a>
-</div>
-<div class="dashboard-content">
-  <div class="dashboard-card">
-    <i class="fas fa-trash-alt"></i>
-    <h3>Waste Collection</h3>
-    <p>Today's collections: 15</p>
-    <p>Total weight: 500 kg</p>
-    <button class="btn">View Details</button>
-  </div>
-  <div class="dashboard-card">
-    <i class="fas fa-recycle"></i>
-    <h3>Recycling Stats</h3>
-    <p>Recycled this month: 2000 kg</p>
-    <p>Recycling rate: 65%</p>
-    <button class="btn">View Details</button>
-  </div>
-  <div class="dashboard-card">
-    <i class="fas fa-chart-bar"></i>
-    <h3>Recycling Report</h3>
-    <p>Recycled this month: 2000 kg</p>
-    <p>Recycling rate: 65%</p>
-    <button class="btn">View Details</button>
-     <!-- Graph container -->
+<div class="dashboard-container">
+  <mat-card>
+    <mat-card-content>
+      <button mat-raised-button color="primary" routerLink="/waste-collection">
+        <mat-icon>delete</mat-icon>
+        Waste Collection
+      </button>
 
-  </div>
+      <button mat-raised-button color="accent" routerLink="/recycling">
+        <mat-icon>recycling</mat-icon>
+        Recycling
+      </button>
+
+      <button mat-raised-button color="warn" routerLink="/disposal">
+        <mat-icon>delete_forever</mat-icon>
+        Disposal
+      </button>
+
+      <button mat-raised-button color="primary" routerLink="/reports">
+        <mat-icon>assessment</mat-icon>
+        Reports
+      </button>
+
+      <button mat-raised-button color="accent" routerLink="/pickup-history">
+        <mat-icon>history</mat-icon>
+        Pickup History
+      </button>
+
+      <button mat-raised-button color="primary" routerLink="/notifications">
+        <mat-icon>notifications</mat-icon>
+        Notifications
+      </button>
+    </mat-card-content>
+  </mat-card>
 </div>
-  
-     
+
+

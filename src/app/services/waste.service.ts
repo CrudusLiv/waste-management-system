@@ -6,11 +6,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class WasteService {
-  constructor(private http: HttpClient) {}
+  private apiUrl = 'http://localhost:3000/api/waste';
 
-  getWasteData(): Observable<any> {
-    return this.http.get('/api/waste-data');
+  constructor(private http: HttpClient) { }
+
+  getWastes(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
 
-  // Add more methods for CRUD operations
+  addWaste(waste: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, waste);
+  }
+
+  updateWaste(id: string, waste: any): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, waste);
+  }
+
+  deleteWaste(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
 }

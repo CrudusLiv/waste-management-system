@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { MaterialModule } from '../../material.module';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-schedule-pickup',
   templateUrl: './schedule-pickup.component.html',
-  styleUrls: ['./schedule-pickup.component.css']
+  styleUrls: ['./schedule-pickup.component.css'],
+  standalone: true,
+  imports: [
+    MaterialModule,
+    RouterLink,
+  ]
 })
 export class SchedulePickupComponent {
   pickupForm: FormGroup;
