@@ -42,7 +42,7 @@ import { PickupHistoryComponent } from './components/pickup-history/pickup-histo
   `,
 })
 export class AppComponent {
-  title = 'waste-management-system';
+  title = 'WasteWise';
   isPopupOpen = false;
   popupTitle = '';
   popupMessage = '';
