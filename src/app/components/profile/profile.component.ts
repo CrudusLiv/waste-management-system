@@ -4,6 +4,7 @@ import { NotificationService } from '../../services/notification.service';
 import { Router } from '@angular/router';
 import { MaterialModule } from '../../material.module';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +14,7 @@ import { RouterLink } from '@angular/router';
   imports: [
     MaterialModule,
     RouterLink,
+    CommonModule,
   ]
 })
 export class ProfileComponent implements OnInit {
