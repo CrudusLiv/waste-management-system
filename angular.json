@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "waste-management-system": {
+    "wastewise": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/waste-management-system",
+            "outputPath": "dist/wastewise",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "waste-management-system:build:production"
+              "buildTarget": "wastewise:build:production"
             },
             "development": {
-              "buildTarget": "waste-management-system:build:development"
+              "buildTarget": "wastewise:build:development"
             }
           },
           "defaultConfiguration": "development"
