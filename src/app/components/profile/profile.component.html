@@ -4,10 +4,9 @@
       <img src="/assets/images/user_profile.png" alt="User Avatar">
     </div>
     <div class="notifications-icon">
-      <i class="fas fa-bell" (click)="toggleNotifications()"></i>
+      <i class="fas fa-bell" (click)="openNotificationsDialog()"></i>
       <span class="notification-count" *ngIf="notifications.length">{{ notifications.length }}</span>
     </div>
-    
     
   </div>
 
@@ -25,7 +24,7 @@
     </div>
     <div class="detail-item">
       <i class="fas fa-home"></i>
-      <span>{{user?.residentialAddress||'Bandar Sunway,	Subang Jaya, Selangor,	47500'}}</span>
+      <span>{{user?.residentialAddress||'Bandar Sunway, Subang Jaya, Selangor, 47500'}}</span>
     </div>
 
   <div class="profile-actions">

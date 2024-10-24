@@ -44,6 +44,11 @@ app.post('/api/notifications', (req, res) => {
   });
 });
 
+app.get('/api/users/:id', (req, res) => {
+  const userId = req.params.id;
+  // Logic to fetch user data by userId
+});
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

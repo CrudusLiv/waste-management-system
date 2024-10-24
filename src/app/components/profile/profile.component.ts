@@ -5,6 +5,8 @@ import { Router } from '@angular/router';
 import { MaterialModule } from '../../material.module';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationDialogComponent } from '../notification-dialog/notification-dialog.component';
 
 @Component({
   selector: 'app-profile',
@@ -23,9 +25,11 @@ export class ProfileComponent implements OnInit {
   showNotifications = false;
   email: string = 'userabc@gmail.com';
 
-  constructor(private userService: UserService, 
+  constructor(
+    private userService: UserService, 
     private notificationService: NotificationService,
-    private router: Router
+    private router: Router,
+    private dialog: MatDialog // Inject MatDialog
   ) {}
 
   ngOnInit() {
@@ -35,14 +39,14 @@ export class ProfileComponent implements OnInit {
     );
   }
 
-  toggleNotifications() {
-    this.router.navigate(['/notifications'])
-  }
-  
-  loadNotifications() {
-    this.notificationService.getNotifications('currentUserId').subscribe(
-      notifications => this.notifications = notifications,
-      error => console.error('Error fetching notifications', error)
-    );
+  openNotificationsDialog() {
+    const dialogRef = this.dialog.open(NotificationDialogComponent, {
+      width: '400px',
+      data: { notifications: this.notifications } // Pass notifications data
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }

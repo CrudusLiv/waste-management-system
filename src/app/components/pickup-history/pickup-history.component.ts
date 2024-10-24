@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { MaterialModule } from '../../material.module';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pickup-history',
@@ -11,6 +12,7 @@ import { MaterialModule } from '../../material.module';
   imports: [
     MaterialModule,
     RouterLink,
+    CommonModule,
   ]
 })
 export class PickupHistoryComponent implements OnInit {

@@ -1,1 +1,16 @@
-
+<h2 mat-dialog-title>Notifications</h2>
+<mat-dialog-content>
+  <div *ngIf="data.notifications.length; else noNotifications">
+    <ul>
+      <li *ngFor="let notification of data.notifications">
+        {{ notification.message }} <!-- Adjust this based on your notification structure -->
+      </li>
+    </ul>
+  </div>
+  <ng-template #noNotifications>
+    <p>No notifications available.</p>
+  </ng-template>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="dialogRef.close()">Close</button>
+</mat-dialog-actions>
