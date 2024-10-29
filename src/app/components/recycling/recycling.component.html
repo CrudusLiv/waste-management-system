@@ -1,35 +1,60 @@
-<div class="page-container">
-    <div class="page-header">
-      <h2><i class="fas fa-recycle"></i> Recycling Guidelines</h2>
-      <div class="subtitle">
-        <p>Follow the guidelines for <b>recycling paper, plastic, glass</b> and <b>aluminum</b> to reduce waste.</p>
-      </div>
-    </div>
+<div class="recycling-page-container">
+  <mat-card-header class="recycling-card-header">
+    <mat-card-title class="recycling-title">
+        <mat-icon>recycling</mat-icon>
+        <h1>Recycling Guidelines</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      Follow the guidelines for <strong>recycling paper, plastic, glass</strong> and <strong>aluminum</strong> to reduce waste and protect our environment.
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <div class="recycling-cards-container">
+    <mat-card class="paper-recycling-card">
+      <mat-card-header>
+        <mat-icon matSuffix>description</mat-icon>
+        <mat-card-title>Paper Recycling</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <p>Guidelines for recycling paper materials.</p>
+          <ul>
+            <li>Newspapers and magazines</li>
+            <li>Office paper and envelopes</li>
+            <li>Cardboard boxes</li>
+            <li>Paper bags</li>
+          </ul>
+      </mat-card-content>
+    </mat-card>
+
+      <mat-card class="plastic-recycling-card">
+        <mat-card-header>
+          <mat-icon matSuffix>local_drink</mat-icon>
+          <mat-card-title>Plastic Recycling</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Guidelines for recycling plastic items.</p>
+        </mat-card-content>
+      </mat-card>
+
   
-    
-  
-    <div class="recycling-grid">
-      <div class="recycling-card">
-        <i class="fas fa-file-alt"></i>
-        <h3>Paper Recycling</h3>
-        <p>Guidelines for recycling paper materials.</p>
-      </div>
-      <div class="recycling-card">
-        <i class="fas fa-prescription-bottle"></i>
-        <h3>Plastic Recycling</h3>
-        <p>Guidelines for recycling plastic items.</p>
-      </div>
-      <div class="recycling-card">
-        <i class="fas fa-wine-bottle"></i>
-        <h3>Glass Recycling</h3>
-        <p>Guidelines for recycling glass items.</p>
-      </div>
-      <div class="recycling-card">
-        <i class="fas fa-cube"></i> 
-        <h3>Aluminum Recycling</h3>
-        <p>Guidelines for recycling aluminum cans and materials.</p>
-      </div>
-    </div>
-    
+      <mat-card class="glass-recycling-card">
+        <mat-card-header>
+          <mat-icon matSuffix>wine_bar</mat-icon>
+          <mat-card-title>Glass Recycling</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Guidelines for recycling glass items.</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="aluminium-recycling-card">
+        <mat-card-header>
+          <mat-icon matSuffix>view_in_ar</mat-icon>
+          <mat-card-title>Aluminum Recycling</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Guidelines for recycling aluminum cans and materials.</p>
+        </mat-card-content>
+      </mat-card>
   </div>
-  
+</div>

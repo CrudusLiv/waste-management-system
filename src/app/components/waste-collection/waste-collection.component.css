@@ -2,110 +2,159 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 20px;
+  min-height: 100vh;
+  animation: gradientFlow 15s ease infinite;
 }
 
-.page-header {
+mat-card {
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(76, 175, 80, 0.15);
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+mat-card:hover {
+  transform: translateY(-5px);
+}
+
+mat-card-header {
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  padding: 50px 30px;
+  position: relative;
+  overflow: hidden;
   text-align: center;
-  margin-bottom: 40px;
-  background: linear-gradient(135deg, #4CAF50, #45a049);
-  padding: 40px 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  h1{
+    line-height: 2.5rem;
+  }
 }
 
-.page-header h2 {
-  font-family: 'Gloria Hallelujah', sans-serif;
-  color: #ffffff;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+mat-card-title {
+  color: white;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.page-header .subtitle {
-  color: #e0f2e1;
+mat-card-title mat-icon {
+  font-size: 3.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
+  margin-bottom: 20px;
+  animation: bounce 2s ease-in-out infinite;
 }
 
-.schedule-section {
-  background-color: rgba(255, 255, 255, 0.814);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
+mat-card-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
 .schedule-form {
-  display: grid;
-  gap: 20px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 
-
-h3 {
-  font-size: 1.8rem;
-  color: #333333;
-  margin: 0 0 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid #4CAF50;
-  display: inline-block;
-  position: relative;
-}
-
-
-
-.schedule-form label {
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 8px;
-  display: block;
-}
-
-.schedule-form select,
-.schedule-form input[type="date"] {
+mat-form-field {
   width: 100%;
-  padding: 12px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  background-color: #f9f9f9;
-  color: #333;
+  margin-bottom: 20px;
 }
 
-.schedule-form select:hover,
-.schedule-form input[type="date"]:hover {
-  border-color: #4CAF50;
+mat-form-field.mat-focused {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
-.schedule-form select:focus,
-.schedule-form input[type="date"]:focus {
-  border-color: #4CAF50;
-  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-  outline: none;
-  background-color: #ffffff;
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+  border-radius: 12px;
 }
 
-button {
-  background-color: #4CAF50;
+button[mat-raised-button] {
+  background: linear-gradient(45deg, #4CAF50, #388E3C);
   color: white;
-  border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
+  padding: 16px 32px;
+  border-radius: 35px;
+  font-size: 1.1rem;
   letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
   width: 100%;
   max-width: 300px;
-  margin: 20px auto 0;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+button[mat-raised-button]:not(:disabled):hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+}
+
+button[mat-raised-button] mat-icon {
+  margin-right: 8px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.mat-select-panel {
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mat-option {
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+
+.mat-option:hover {
+  background: linear-gradient(45deg, #E8F5E9, #C8E6C9);
+  transform: scale(1.02);
+}
+
+.mat-datepicker-toggle {
+  color: #4CAF50;
+}
+
+textarea.mat-input-element {
+  min-height: 100px;
+  padding: 12px;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 20px 10px;
+  }
+  
+  mat-card {
+    border-radius: 20px;
+  }
+  
+  .schedule-form {
+    padding: 20px;
+  }
+  
+  button[mat-raised-button] {
+    width: 100%;
+    max-width: none;
+  }
 }

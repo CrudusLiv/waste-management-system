@@ -13,5 +13,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './recycling.component.css'
 })
 export class RecyclingComponent {
+recyclingRate: unknown;
 
 }

@@ -1,36 +1,58 @@
 <div class="page-container">
-    <div class="page-header">
-      <h2><i class="fas fa-chart-bar"></i> Generate Reports</h2>
-    </div>
-  
-    <div class="report-selection">
-      <select>
-        <option value="pickup-history">Pickup History</option>
-        <option value="recycling-stats">Recycling Statistics</option>
-        <option value="issue-reports">Issue Reports</option>
-      </select>
-    </div>
-  
-    <div class="report-grid">
-      <div class="report-card">
-        <h3>Pickup History</h3>
-        <p>Details of past pickups.</p>
-      </div>
-      <div class="report-card">
-        <h3>Recycling Statistics</h3>
-        <p>Statistics on recycling rates and trends.</p>
-        <div class="chart-container">
-          <div class="chart-bar" style="height: 60%; background-color: #4caf50;">Plastic</div>
-          <div class="chart-bar" style="height: 40%; background-color: #2196f3;">Glass</div>
-          <div class="chart-bar" style="height: 30%; background-color: #ff9800;">Metal</div>
-          <div class="chart-bar" style="height: 50%; background-color: #e91e63;">Paper</div>
-          <div class="chart-bar" style="height: 70%; background-color: #9c27b0;">Others</div>
-        </div>
-      </div>
-      <div class="report-card">
-        <h3>Issue Reports</h3>
-        <p>Summary of issues reported by users.</p>
-      </div>
-    </div>
+  <div class="report-header">
+    <mat-card-title>
+      <mat-icon>assessment</mat-icon>
+      <h1>Analytics & Reports</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      Comprehensive waste management analytics and reporting dashboard
+    </mat-card-subtitle>
   </div>
-  
+
+  <mat-form-field appearance="outline" class="report-select">
+    <mat-label>Select Report Type</mat-label>
+    <mat-select>
+      <mat-option value="daily">Daily Report</mat-option>
+      <mat-option value="weekly">Weekly Report</mat-option>
+      <mat-option value="monthly">Monthly Report</mat-option>
+      <mat-option value="custom">Custom Range</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="report-grid">
+    <mat-card class="report-card">
+      <mat-card-header>
+        <mat-icon matSuffix>bar_chart</mat-icon>
+        <mat-card-title>Waste Distribution</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-container">
+         <!-- Add waste distribution visualization -->
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="report-card">
+      <mat-card-header>
+        <mat-icon matSuffix>trending_up</mat-icon> 
+        <mat-card-title>Recycling Performance</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="chart-container">
+          <!-- Add performance metrics visualization -->
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="action-buttons">
+    <button mat-raised-button color="primary">
+      <mat-icon >download</mat-icon>
+      Export Report
+    </button>
+    <button mat-raised-button color="accent">
+      <mat-icon>share</mat-icon>
+      Share Insights
+    </button>
+  </div>
+</div>

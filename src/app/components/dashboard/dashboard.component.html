@@ -1,38 +1,44 @@
+
 <div class="dashboard-container">
-  <mat-card>
-    <mat-card-content>
-      <h2>Welcome to WasteWise</h2>
-      <button mat-raised-button color="primary" routerLink="/waste-collection">
-        <mat-icon>delete</mat-icon>
-        Waste Collection
-      </button>
+  <div class="dashboard-header">
+    <h1>WasteWise Dashboard</h1>
+  </div>
 
-      <button mat-raised-button color="accent" routerLink="/recycling">
-        <mat-icon>recycling</mat-icon>
-        Recycling
+  <div class="dashboard-content">
+    <div class="dashboard-card">
+      <mat-icon class="feature-icon">delete</mat-icon>
+      <h3>Waste Collection</h3>
+      <p>Schedule and manage waste pickups</p>
+      <button mat-raised-button class="btn" routerLink="/waste-collection">
+        Manage Collection
       </button>
+    </div>
 
-      <button mat-raised-button color="warn" routerLink="/disposal">
-        <mat-icon>delete_forever</mat-icon>
-        Disposal
+    <div class="dashboard-card">
+      <mat-icon class="feature-icon">recycling</mat-icon>
+      <h3>Recycling Center</h3>
+      <p>Track recycling activities and stats</p>
+      <button mat-raised-button class="btn" routerLink="/recycling">
+        View Recycling
       </button>
+    </div>
 
-      <button mat-raised-button color="primary" routerLink="/reports">
-        <mat-icon>assessment</mat-icon>
-        Reports
+    <div class="dashboard-card">
+      <mat-icon class="feature-icon">assessment</mat-icon>
+      <h3>Analytics</h3>
+      <p>View waste management reports</p>
+      <button mat-raised-button class="btn" routerLink="/reports">
+        View Reports
       </button>
+    </div>
 
-      <button mat-raised-button color="accent" routerLink="/pickup-history">
-        <mat-icon>history</mat-icon>
-        Pickup History
+    <div class="dashboard-card">
+      <mat-icon class="feature-icon">history</mat-icon>
+      <h3>Collection History</h3>
+      <p>View past collection records</p>
+      <button mat-raised-button class="btn" routerLink="/pickup-history">
+        View History
       </button>
-
-      <button mat-raised-button color="primary" routerLink="/notifications">
-        <mat-icon>notifications</mat-icon>
-        Notifications
-      </button>
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>
 </div>
-
-

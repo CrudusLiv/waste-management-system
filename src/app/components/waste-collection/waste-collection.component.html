@@ -1,74 +1,60 @@
 <div class="page-container">
-  <div class="page-container">
-  <div class="page-header">
-    
-    <h2><i class="fas fa-truck"></i> Waste Collection Scheduling</h2>
-    <p class="subtitle">Manage your waste collection efficiently</p>
-  </div>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>local_shipping</mat-icon>
+        <h1>Waste Collection Scheduling</h1>
+      </mat-card-title>
+      <mat-card-subtitle>Schedule your waste collection service efficiently</mat-card-subtitle>
+    </mat-card-header>
 
-  <div class="schedule-section">
-    <h3>Schedule a Waste Collection</h3>
-    <form class="schedule-form">
-      <div class="form-group">
-        <label for="area">Select Area:</label>
-        <select id="area" class="form-control">
-          <option value="area1">Area 1</option>
-          <option value="area2">Area 2</option>
-        </select>
-      </div>
+    <mat-card-content>
+      <form [formGroup]="collectionForm" (ngSubmit)="onSubmit()" class="schedule-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Collection Area</mat-label>
+          <mat-select formControlName="area">
+            <mat-option *ngFor="let area of areas" [value]="area.id">
+              {{area.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="collectionForm.get('area')?.hasError('required')">
+            Please select an area
+          </mat-error>
+        </mat-form-field>
 
-      <div class="form-group">
-        <label for="date">Pick a Date:</label>
-        <input type="date" id="date" class="form-control" />
-      </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Collection Date</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="collectionForm.get('date')?.hasError('required')">
+            Please select a date
+          </mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+          <mat-label>Waste Type</mat-label>
+          <mat-select formControlName="wasteType">
+            <mat-option *ngFor="let type of wasteTypes" [value]="type.id">
+              {{type.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="collectionForm.get('wasteType')?.hasError('required')">
+            Please select a waste type
+          </mat-error>
+        </mat-form-field>
 
-      <div class="form-group">
-        <label for="waste-type">Select Waste Type:</label>
-        <select id="waste-type" class="form-control">
-          <div class="admin-dashboard-container">
-            <div class="admin-dashboard-header">
-              <h2><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h2>
-              <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Add New User</button>
-            </div>
-            <div class="admin-dashboard-content">
-              <div class="admin-dashboard-card">
-                <i class="fas fa-users card-icon"></i>
-                <h3>User Management</h3>
-                <p>Manage user accounts and permissions.</p>
-                <div class="card-stats">
-                  <span>Total Users: 1,234</span>
-                  <span>Active: 1,100</span>
-                </div>
-                <button class="btn btn-secondary">View Details</button>
-              </div>
-              <div class="admin-dashboard-card">
-                <i class="fas fa-chart-bar card-icon"></i>
-                <h3>Reports</h3>
-                <p>Generate and view system reports.</p>
-                <div class="card-stats">
-                  <span>Monthly Reports: 12</span>
-                  <span>Annual Reports: 4</span>
-                </div>
-                <button class="btn btn-secondary">View Details</button>
-              </div>
-              <div class="admin-dashboard-card">
-                <i class="fas fa-cogs card-icon"></i>
-                <h3>System Settings</h3>
-                <p>Configure system settings and preferences.</p>
-                <div class="card-stats">
-                  <span>Last Updated: 2 days ago</span>
-                </div>
-                <button class="btn btn-secondary">View Details</button>
-              </div>
-            </div>
-          </div>
-              <option value="household">Household Waste</option>
-          <option value="recyclable">Recyclable Waste</option>
-          <option value="hazardous">Hazardous Waste</option>
-        </select>
-      </div>
+        <mat-form-field appearance="outline">
+          <mat-label>Additional Notes</mat-label>
+          <textarea matInput formControlName="notes" rows="3"></textarea>
+        </mat-form-field>
 
-      <button type="submit" class="btn">Schedule Pickup</button>
-    </form>
-  </div>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!collectionForm.valid">
+          <mat-icon>schedule</mat-icon>
+          Schedule Collection
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
 </div>

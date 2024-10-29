@@ -13,5 +13,4 @@ import { RouterLink } from '@angular/router';
   styleUrl: './reports.component.css'
 })
 export class ReportsComponent {
-
 }

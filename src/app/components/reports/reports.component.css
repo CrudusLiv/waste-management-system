@@ -1,103 +1,118 @@
 .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(199, 232, 202, 0.8));
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
 
-  .page-header {
-    text-align: center;
-    margin-bottom: 40px;
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .page-header h2 {
-    font-family: 'Gloria Hallelujah', sans-serif;
+.report-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 25px;
+  width: 100%;
+}
+
+.report-header h1 {
+  font-size: clamp(24px, 3vw, 28px);
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+mat-card-subtitle {
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+.report-select {
+  width: 100%;
+  margin: 20px 0;
+  color: #000000;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: border-color 0.3s ease;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin: 20px 0 30px 0;
+  width: 100%;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-card {
+  background: white;
+  border-radius: 16px;
+  height: 350px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.report-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.15);
+}
+
+.chart-container {
+  height: 80%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+button[mat-raised-button] {
+  background-color: #ffffff;
+  color: #296d2d;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  display: block;
+}
+
+button[mat-raised-button]:hover
+{
+  mat-icon{
     color: #ffffff;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
-  
-  .page-header .subtitle {
-    color: #2a2a2a;
-  }
-  
-  .report-selection {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .report-selection select {
-    padding: 10px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .report-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-  }
-  
-  .report-card {
-    background-color: rgba(255, 255, 255, 0.814);
-    border: none;
-    border-radius: 15px;
-    padding: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .report-card h3 {
-    color: #04554d;
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
-  
-  .report-card p {
-    font-size: 1rem;
-    color: #555555;
-  }
+  background-color: #64ce67bc;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
-  /* Style the graph bars */
-  .chart-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    height: 250px;
-    background-color: #ffffffa5;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .chart-bar {
-    width: 18%;
-    text-align: center;
-    color: white;
-    border-radius: 5px 5px 0 0;
-    padding-top: 10px;
-    font-size: 14px;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-  
-  .chart-bar:hover {
-    transform: scaleY(1.05);
-  }
-  
-  .chart-bar::after {
-    content: attr(data-percentage);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #333;
-    font-weight: bold;
-  }
-  
-  
+mat-card-title {
+  font-size: clamp(18px, 2vw, 22px);
+  color: #2E7D32;
+  font-weight: 600;
+}
+
+mat-icon {
+  color: #4CAF50;
+  font-size: clamp(15px, 2.5vw, 20px);
+  margin-right: 10px;
+}

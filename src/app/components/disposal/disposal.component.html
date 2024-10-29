@@ -1,20 +1,61 @@
 <div class="page-container">
-    <div class="page-header">
-      <h2><i class="fas fa-trash-alt"></i> Disposal Instructions</h2>
-    </div>
-    <div class="disposal-info">
-      <div class="disposal-card">
-        <h3>Household Waste</h3>
-        <p>Instructions for safely disposing of household waste.</p>
-      </div>
-      <div class="disposal-card">
-        <h3>Hazardous Waste</h3>
-        <p>Instructions for disposing of hazardous materials.</p>
-      </div>
-      <div class="disposal-card">
-        <h3>E-Waste</h3>
-        <p>How to properly dispose of electronic waste.</p>
-      </div>
-    </div>
+  <mat-card-header class="page-header">
+    <mat-card-title>
+      <mat-icon>delete</mat-icon>
+      <h1>Disposal Instructions</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      Learn proper waste disposal methods for <strong>household</strong>, <strong>hazardous</strong>, and <strong>electronic</strong> waste
+    </mat-card-subtitle>
+  </mat-card-header>
+
+  <div class="disposal-grid">
+    <mat-card class="disposal-card">
+      <mat-card-header>
+        <mat-icon matSuffix>home</mat-icon>
+        <mat-card-title>Household Waste</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Guidelines for disposing household waste:</p>
+        <ul>
+          <li>Use designated bins</li>
+          <li>Separate recyclables</li>
+          <li>Compact waste when possible</li>
+          <li>Follow local collection schedules</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="disposal-card">
+      <mat-card-header>
+        <mat-icon matSuffix>warning</mat-icon>
+        <mat-card-title>Hazardous Waste</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Guidelines for hazardous waste disposal:</p>
+        <ul>
+          <li>Special handling required</li>
+          <li>Contact local authorities</li>
+          <li>Use designated facilities</li>
+          <li>Never mix materials</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="disposal-card">
+      <mat-card-header>
+        <mat-icon matSuffix>devices</mat-icon>
+        <mat-card-title>E-Waste</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>Guidelines for electronic waste disposal:</p>
+        <ul>
+          <li>Visit certified recycling centers</li>
+          <li>Secure data wiping required</li>
+          <li>Keep batteries separate</li>
+          <li>Check manufacturer programs</li>
+        </ul>
+      </mat-card-content>
+    </mat-card>
   </div>
-  
+</div>

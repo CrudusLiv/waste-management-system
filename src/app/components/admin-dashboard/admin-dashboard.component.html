@@ -1,26 +1,43 @@
 <div class="admin-dashboard-container">
   <div class="admin-dashboard-header">
-    <h2>Admin Dashboard</h2>
-    <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Add New User</button>
+    <h1>Admin Dashboard</h1>
+    <button mat-raised-button color="primary" class="btn-add-user">
+      <mat-icon>person_add</mat-icon>
+      Add New User
+    </button>
   </div>
   <div class="admin-dashboard-content">
-    <div class="admin-dashboard-card">
-      <i class="fas fa-users card-icon"></i>
-      <h3>User Management</h3>
-      <p>Manage user accounts and permissions.</p>
-      <button class="btn btn-secondary">View Details</button>
-    </div>
-    <div class="admin-dashboard-card">
-      <i class="fas fa-chart-bar card-icon"></i>
-      <h3>Reports</h3>
-      <p>Generate and view system reports.</p>
-      <button class="btn btn-secondary">View Details</button>
-    </div>
-    <div class="admin-dashboard-card">
-      <i class="fas fa-cogs card-icon"></i>
-      <h3>System Settings</h3>
-      <p>Configure system settings and preferences.</p>
-      <button class="btn btn-secondary">View Details</button>
-    </div>
+    <mat-card class="admin-dashboard-card">
+      <mat-icon class="feature-icon">delete</mat-icon>
+      <mat-card-title>Waste Collection</mat-card-title>
+      <mat-card-content>
+        <p>Monitor and manage waste collection routes and schedules.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">Manage Collection</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="admin-dashboard-card">
+      <mat-icon class="feature-icon">recycling</mat-icon>
+      <mat-card-title>Recycling Centers</mat-card-title>
+      <mat-card-content>
+        <p>Track recycling center operations and capacity.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">View Centers</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="admin-dashboard-card">
+      <mat-icon class="feature-icon">analytics</mat-icon>
+      <mat-card-title>Analytics</mat-card-title>
+      <mat-card-content>
+        <p>View waste management statistics and performance metrics.</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button color="primary">View Reports</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

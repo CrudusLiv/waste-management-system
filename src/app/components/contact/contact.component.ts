@@ -19,7 +19,7 @@ import { MaterialModule } from '../../material.module';
 
 export class ContactComponent {
   contactForm: FormGroup;
-
+  
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],

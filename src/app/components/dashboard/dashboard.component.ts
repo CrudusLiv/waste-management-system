@@ -7,11 +7,12 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [
     MaterialModule,
-    RouterLink,
+    RouterLink
+
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-
+  userName: string = 'UserName';
 }

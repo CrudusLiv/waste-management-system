@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -20,6 +20,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule} from '@angular/material/tabs';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   exports: [
@@ -43,7 +49,13 @@ import { MatMenuModule } from '@angular/material/menu';
     MatProgressSpinnerModule,
     MatChipsModule,
     MatBadgeModule,
-    MatMenuModule
-  ]
+    MatMenuModule,
+    ReactiveFormsModule,
+    MatTabsModule,
+    MatButtonToggleModule,
+    MatExpansionModule,
+    MatProgressBarModule,
+    MatGridListModule
+  ],
 })
 export class MaterialModule { }

@@ -1,78 +1,93 @@
 .page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .page-header {
-    text-align: center;
-    margin-bottom: 40px;
-    background: linear-gradient(135deg, #4CAF50, #45a049);
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  .page-header h2 {
-    font-family: 'Gloria Hallelujah', sans-serif;
-    color: #ffffff;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
-  .page-header .subtitle {
-    color: #2a2a2a;
-  }
-  
-  .disposal-info {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-  }
-
-  .disposal-card {
-   background-color: rgba(255, 255, 255, 0.814);
-  border: none;
-  border-radius: 15px;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
   padding: 30px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(199, 232, 202, 0.8));
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 25px;
+  width: 100%;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+.disposal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.disposal-card {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  height: 350px;
+  padding: 20px;
+  text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .disposal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  }
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
 
-  .disposal-card h3 {
-    color: #3e9441;
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
-  
-  .disposal-card p {
-    font-size: 1rem;
-    color: #333;
-  }
-  .disposal-card i {
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: #2196F3;
-  }
+.disposal-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(46, 125, 50, 0.15);
+}
 
-  .disposal-card a {
-    display: inline-block;
-    margin-top: 10px;
-    color: #2196F3;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+.disposal-card mat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #e8f5e9;
+  padding-bottom: 15px;
+  width: 100%;
+  height: 20%;
+}
 
-  .disposal-card a:hover {
-    color: #333;
-  }
+mat-icon {
+  color: #4CAF50;
+  font-size: 20px;
+}
 
-  .disposal-card a:hover i {
-    transform: translateX(5px);
-  }
+.disposal-card mat-card-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin: 0;
+}
+/* Add these responsive font styles */
+mat-card-title {
+  font-size: clamp(18px, 2vw, 22px);
+}
+
+mat-card-content p {
+  font-size: clamp(12px, 1.5vw, 14px);
+  margin-bottom: 10px;
+}
+
+mat-card-content li {
+  font-size: clamp(12px, 1.5vw, 14px);
+}
+
+.recycling-card-header h1 {
+  font-size: clamp(24px, 3vw, 28px);
+}
+
