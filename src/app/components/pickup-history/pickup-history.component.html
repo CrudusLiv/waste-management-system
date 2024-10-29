@@ -1,23 +1,49 @@
-<div class="pickup-history-container">
-  <h2>Pickup History</h2>
-  <div class="filter-section">
-    <label for="wasteType">Waste Type</label>
-    <select id="wasteType" (change)="filterHistory()">
-      <option value="">All</option>
-      <option value="household">Household Waste</option>
-      <option value="recyclable">Recyclable Waste</option>
-      <option value="hazardous">Hazardous Waste</option>
-    </select>
-    <label for="startDate">Start Date</label>
-    <input id="startDate" type="date" (change)="filterHistory()">
-    <label for="endDate">End Date</label>
-    <input id="endDate" type="date" (change)="filterHistory()">
-  </div>
-  <div class="history-list">
-    <div class="history-card" *ngFor="let pickup of filteredHistory">
+<mat-card class="pickup-history-container">
+  <mat-card-header>
+    <mat-card-title>Pickup History</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div class="filter-section">
+      <mat-form-field appearance="outline">
+        <mat-label>Waste Type</mat-label>
+        <mat-select><!--  [(ngModel)]="filter.wasteType" (selectionChange)="filterHistory()"> -->
+          <mat-option value="">All</mat-option>
+          <mat-option value="household">Household Waste</mat-option>
+          <mat-option value="recyclable">Recyclable Waste</mat-option>
+          <mat-option value="hazardous">Hazardous Waste</mat-option>
+        </mat-select>
+      </mat-form-field>
       
-      <p>Type: {{ pickup.wasteType }}</p>
-      <p>Person in Charge: {{ pickup.personInCharge }}</p>
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="startPicker"><!-- [(ngModel)]="filter.startDate" (dateChange)="filterHistory()">-->
+        <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="endPicker" ><!--[(ngModel)]="filter.endDate" (dateChange)="filterHistory()">-->
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+      </mat-form-field>
     </div>
-  </div>
-</div>
+
+    <div class="history-grid">
+      <mat-card class="history-card" *ngFor="let pickup of filteredHistory">
+        <mat-card-content>
+          <div class="waste-type">
+            <mat-icon [ngClass]="pickup.wasteType">
+              {{ pickup.wasteType === 'household' ? 'home' : 
+                 pickup.wasteType === 'recyclable' ? 'recycling' : 'warning' }}
+            </mat-icon>
+            <span>{{ pickup.wasteType | titlecase }}</span>
+          </div>
+          <mat-divider></mat-divider>
+          <p class="person"><mat-icon>person</mat-icon> {{ pickup.personInCharge }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card-content>
+</mat-card>

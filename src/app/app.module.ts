@@ -9,6 +9,11 @@ import { PickupHistoryComponent } from './components/pickup-history/pickup-histo
 import { MaterialModule } from './material.module';
 import { NotificationDialogComponent } from './components/notification-dialog/notification-dialog.component';
 import { AppComponent } from './app.component';
+import { WasteCollectionComponent } from './components/waste-collection/waste-collection.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DisposalComponent } from './components/disposal/disposal.component';
 
 
 @NgModule({
@@ -25,6 +30,8 @@ import { AppComponent } from './app.component';
     MaterialModule,
     NotificationDialogComponent,
     PickupHistoryComponent,
+    WasteCollectionComponent,
+
     AppComponent, // Import AppComponent instead of declaring it
   ],
   providers: [
