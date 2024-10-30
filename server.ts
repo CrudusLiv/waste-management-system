@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url';
 import { CommonEngine } from '@angular/ssr';
 import { APP_BASE_HREF } from '@angular/common';
 import bootstrap from './src/main.server';
-import wasteRoutes from './src/routes/waste.routes';
 
 export function app(): express.Express {
   const server = express();
@@ -22,7 +21,6 @@ export function app(): express.Express {
 
   server.set('view engine', 'html');
   server.set('views', browserDistFolder);
-  server.use('/api/waste', wasteRoutes);
 
   // Serve static files from /browser
   server.get('*.*', express.static(browserDistFolder, {

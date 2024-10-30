@@ -1,60 +1,50 @@
-<div class="page-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>
-        <mat-icon>local_shipping</mat-icon>
-        <h1>Waste Collection Scheduling</h1>
-      </mat-card-title>
-      <mat-card-subtitle>Schedule your waste collection service efficiently</mat-card-subtitle>
-    </mat-card-header>
-
-    <mat-card-content>
-      <form [formGroup]="collectionForm" (ngSubmit)="onSubmit()" class="schedule-form">
-        <mat-form-field appearance="outline">
-          <mat-label>Collection Area</mat-label>
-          <mat-select formControlName="area">
-            <mat-option *ngFor="let area of areas" [value]="area.id">
-              {{area.name}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="collectionForm.get('area')?.hasError('required')">
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>Waste Collection Scheduling</h1>
+      <p>Schedule your waste collection service efficiently</p>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="collectionForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="area">Collection Area</label>
+          <select id="area" formControlName="area" class="form-control">
+            <option value="" disabled selected>Select an area</option>
+            <option *ngFor="let area of areas" [value]="area.id">{{ area.name }}</option>
+          </select>
+          <div *ngIf="area?.invalid && (area?.touched || area?.dirty)" class="text-danger">
             Please select an area
-          </mat-error>
-        </mat-form-field>
+          </div>
+        </div>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Collection Date</mat-label>
-          <input matInput [matDatepicker]="picker">
-          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker #picker></mat-datepicker>
-          <mat-error *ngIf="collectionForm.get('date')?.hasError('required')">
+        <div class="form-group">
+          <label for="date">Collection Date</label>
+          <input type="date" id="date" formControlName="date" class="form-control">
+          <div *ngIf="date?.invalid && (date?.touched || date?.dirty)" class="text-danger">
             Please select a date
-          </mat-error>
-        </mat-form-field>
-        
-        <mat-form-field appearance="outline">
-          <mat-label>Waste Type</mat-label>
-          <mat-select formControlName="wasteType">
-            <mat-option *ngFor="let type of wasteTypes" [value]="type.id">
-              {{type.name}}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="collectionForm.get('wasteType')?.hasError('required')">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="wasteType">Waste Type</label>
+          <select id="wasteType" formControlName="wasteType" class="form-control">
+            <option value="" disabled selected>Select waste type</option>
+            <option *ngFor="let type of wasteTypes" [value]="type.id">{{ type.name }}</option>
+          </select>
+          <div *ngIf="collectionForm.get('wasteType')?.invalid && (collectionForm.get('wasteType')?.touched || collectionForm.get('wasteType')?.dirty)" class="text-danger">
             Please select a waste type
-          </mat-error>
-        </mat-form-field>
+          </div>
+        </div>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Additional Notes</mat-label>
-          <textarea matInput formControlName="notes" rows="3"></textarea>
-        </mat-form-field>
+        <div class="form-group">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" formControlName="notes" class="form-control" rows="3"></textarea>
+        </div>
 
-        <button mat-raised-button color="primary" type="submit" [disabled]="!collectionForm.valid">
-          <mat-icon>schedule</mat-icon>
+        <button class="btn btn-primary" type="submit" [disabled]="!collectionForm.valid">
           Schedule Collection
         </button>
       </form>
-    </mat-card-content>
-  </mat-card>
+    </div>
+  </div>
 </div>

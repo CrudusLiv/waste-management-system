@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { MaterialModule } from '../../material.module';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,29 +11,13 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css'],
   standalone: true,
   imports: [
-    MaterialModule,
     CommonModule,
+    ReactiveFormsModule,
   ]
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  signupForm!: FormGroup;
   hidePassword = true;
-  selectedTab = 0 ;
-
-  validationMessages = {
-    email: [
-      { type: 'required', message: 'Email is required' },
-      { type: 'email', message: 'Please enter a valid email' }
-    ],
-    password: [
-      { type: 'required', message: 'Password is required' },
-      { type: 'minlength', message: 'Password must be at least 6 characters' }
-    ],
-    name: [
-      { type: 'required', message: 'Full name is required' }
-    ]
-  };
 
   constructor(
     private fb: FormBuilder,
@@ -42,20 +26,13 @@ export class LoginComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.initializeForms();
+    this.initializeForm();
   }
 
-  private initializeForms() {
+  private initializeForm() {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
-
-    this.signupForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      terms: [false, Validators.requiredTrue]
     });
   }
 
@@ -68,21 +45,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSignup() {
-    if (this.signupForm.valid) {
-      this.authService.signup(this.signupForm.value).subscribe({
-        next: () => {
-          this.selectedTab = 0;
-          this.signupForm.reset();
-        },
-        error: (error) => console.error('Signup error:', error)
-      });
-    }
-  }
-
-  getErrorMessage(controlName: string, formType: 'login' | 'signup'): string {
-    const form = formType === 'login' ? this.loginForm : this.signupForm;
-    const control = form.get(controlName);
+  getErrorMessage(controlName: string): string {
+    const control = this.loginForm.get(controlName);
     
     if (control?.hasError('required')) {
       return 'This field is required';
@@ -92,6 +56,5 @@ export class LoginComponent implements OnInit {
       return 'Password must be at least 6 characters long';
     }
     return '';
-
   }
 }

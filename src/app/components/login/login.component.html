@@ -1,75 +1,32 @@
 <div class="login-background">
     <div class="login-container">
         <div class="login-header">
-            <mat-icon class="eco-icon">eco</mat-icon>
             <h1>WasteWise Management</h1>
             <p class="subtitle">Sustainable Solutions for a Cleaner Future</p>
         </div>
 
-        <mat-card class="login-card">
-            <mat-tab-group [(selectedIndex)]="selectedTab">
-                <mat-tab label="Sign In">
-                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Email</mat-label>
-                            <input matInput formControlName="email" type="email">
-                            <mat-icon matPrefix>email</mat-icon>
-                            <mat-error *ngIf="loginForm.get('email')?.invalid">
-                                {{getErrorMessage('email', 'login')}}
-                            </mat-error>
-                        </mat-form-field>
+        <div class="login-card">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" formControlName="email" class="form-control" required>
+                    <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="text-danger">
+                        {{ getErrorMessage('email') }}
+                    </div>
+                </div>
 
-                        <mat-form-field appearance="outline">
-                            <mat-label>Password</mat-label>
-                            <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'">
-                            <mat-icon matPrefix>lock</mat-icon>
-                            <mat-icon matSuffix (click)="hidePassword = !hidePassword">
-                                {{hidePassword ? 'visibility_off' : 'visibility'}}
-                            </mat-icon>
-                            <mat-error *ngIf="loginForm.get('password')?.invalid">
-                                {{getErrorMessage('password', 'login')}}
-                            </mat-error>
-                        </mat-form-field>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" formControlName="password" class="form-control" required>
+                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                        {{ getErrorMessage('password') }}
+                    </div>
+                </div>
 
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">
-                            Sign In
-                        </button>
-                    </form>
-                </mat-tab>
-
-                <mat-tab label="Sign Up">
-                    <form [formGroup]="signupForm" (ngSubmit)="onSignup()">
-                        <mat-form-field appearance="outline">
-                            <mat-label>Full Name</mat-label>
-                            <input matInput formControlName="name">
-                            <mat-icon matPrefix>person</mat-icon>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline">
-                            <mat-label>Email</mat-label>
-                            <input matInput formControlName="email" type="email">
-                            <mat-icon matPrefix>email</mat-icon>
-                        </mat-form-field>
-
-                        <mat-form-field appearance="outline">
-                            <mat-label>Password</mat-label>
-                            <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'">
-                            <mat-icon matPrefix>lock</mat-icon>
-                            <mat-icon matSuffix (click)="hidePassword = !hidePassword">
-                                {{hidePassword ? 'visibility_off' : 'visibility'}}
-                            </mat-icon>
-                        </mat-form-field>
-
-                        <mat-checkbox formControlName="terms" color="primary">
-                            I agree to the Terms of Service
-                        </mat-checkbox>
-
-                        <button mat-raised-button color="primary" type="submit" [disabled]="!signupForm.valid">
-                            Create Account
-                        </button>
-                    </form>
-                </mat-tab>
-            </mat-tab-group>
-        </mat-card>
+                <button class="btn btn-primary" type="submit" [disabled]="!loginForm.valid">
+                    Sign In
+                </button>
+            </form>
+        </div>
     </div>
 </div>

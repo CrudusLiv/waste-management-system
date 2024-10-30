@@ -6,9 +6,7 @@
   border-radius: 30px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-
 }
-
 
 .contact-header {
   text-align: center;
@@ -52,32 +50,33 @@
   border-radius: 20px;
 }
 
-.form-field {
-  width: 100%;
+.form-group {
   margin-bottom: 20px;
 }
 
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
-  background: white;
-  border-radius: 12px !important;
-  padding: 15px !important;
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
 }
 
-.submit-btn {
+.text-danger {
+  color: red;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
   width: 100%;
   padding: 15px;
   background: linear-gradient(45deg, #43A047, #1B5E20);
   color: white;
   border-radius: 12px;
   font-size: 1.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   transition: transform 0.3s ease;
 }
 
-.submit-btn:hover {
+.btn-primary:hover {
   transform: translateY(-2px);
 }
 
@@ -102,11 +101,9 @@
   transform: translateX(10px);
 }
 
-.detail-card mat-icon {
+.detail-card i {
   color: #43A047;
   font-size: 28px;
-  width: 28px;
-  height: 28px;
 }
 
 .detail-text h3 {
@@ -124,16 +121,17 @@
   .form-section {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-container {
     border-radius: 20px;
   }
-  
+
   .contact-header {
     padding: 30px 20px;
   }
-  
+
   .form-section {
     padding: 30px 20px;
   }
 }
+

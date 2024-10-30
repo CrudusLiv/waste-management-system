@@ -26,6 +26,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { MatGridListModule} from '@angular/material/grid-list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   exports: [
@@ -55,7 +56,8 @@ import { MatGridListModule} from '@angular/material/grid-list';
     MatButtonToggleModule,
     MatExpansionModule,
     MatProgressBarModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCheckboxModule
   ],
 })
 export class MaterialModule { }
