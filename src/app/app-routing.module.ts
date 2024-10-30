@@ -20,7 +20,7 @@ export const routes: Routes = [
   { path: 'recycling', component: RecyclingComponent },
   { path: 'disposal', component: DisposalComponent },
   { path: 'reports', component: ReportsComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent },
+  { path: 'admin', component: AdminDashboardComponent },
   { path: 'pickup-history', component: PickupHistoryComponent },
   { path: 'contact', component: ContactComponent },
 ];

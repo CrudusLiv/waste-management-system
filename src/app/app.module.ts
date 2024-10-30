@@ -25,6 +25,10 @@ import { DisposalComponent } from './components/disposal/disposal.component';
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule,
+    ContactComponent,
+    DashboardComponent,
+    DisposalComponent,
+    LoginComponent,
     HttpClientModule, // Use HttpClientModule instead of HttpClient
     AdminDashboardComponent,
     MaterialModule,

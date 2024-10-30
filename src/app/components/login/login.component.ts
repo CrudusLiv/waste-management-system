@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { MaterialModule } from '../../material.module';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +12,7 @@ import { MaterialModule } from '../../material.module';
   standalone: true,
   imports: [
     MaterialModule,
+    CommonModule,
   ]
 })
 export class LoginComponent implements OnInit {

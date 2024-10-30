@@ -4,6 +4,8 @@ import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-waste-collection',
@@ -11,7 +13,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
   imports: [
     MaterialModule,
     RouterLink,
-    
+    CommonModule,
   ],
   templateUrl: './waste-collection.component.html',
   styleUrl: './waste-collection.component.css',
